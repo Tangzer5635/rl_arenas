@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: RL_ARENAs
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rl_arena
+    username: postgres
+    password: azerty+35
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  #      jakarta:
+  #        persistence:
+  #          validation:
+  #            mode: none
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  jwt:
+    secret: rl-arena-super-secret-key-must-be-at-least-64-characters-long-ok
+    expiration-ms: 3600000
+    refresh-expiration-ms: 604800000
+
+server:
+  port: 8082
